@@ -531,30 +531,31 @@ console.log(secondToLastLetterOfLastName);*/
 
 
 //nested arrays
-var myPlants = [
-    {
-        type:"flowers",
-        list: [
-            "rose",
-            "tulip",
-            "dandelion"
-        ]
-    },
-    {
-        type:"trees",
-        list: [
-            "fir",
-            "pine",
-            "birch"
-        ]
-    }
-];
-var firstFlower = myPlants[0].list[0];
-console.log(firstFlower);
-var secondFlower = myPlants[0].list[1];
-console.log(secondFlower);
-var thirdFlower = myPlants[0].list[2];
-console.log(thirdFlower);
+
+// var myPlants = [
+//     {
+//         type:"flowers",
+//         list: [
+//             "rose",
+//             "tulip",
+//             "dandelion"
+//         ]
+//     },
+//     {
+//         type:"trees",
+//         list: [
+//             "fir",
+//             "pine",
+//             "birch"
+//         ]
+//     }
+// ];
+// var firstFlower = myPlants[0].list[0];
+// console.log(firstFlower);
+// var secondFlower = myPlants[0].list[1];
+// console.log(secondFlower);
+// var thirdFlower = myPlants[0].list[2];
+// console.log(thirdFlower);
 
 
 // var thirdTree = myPlants[1].list[2];
