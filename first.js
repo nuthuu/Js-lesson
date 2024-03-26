@@ -605,7 +605,314 @@ console.log(secondToLastLetterOfLastName);*/
 
 //     return collection;
 // }
+
+// updateRecords(2468, "track", "test");
 // console.log(updateRecords(5439, "artist", "ABBA"));
+
+
+//while loops
+// myArray= [];
+
+// var i = 0;
+// while(i < 50){
+//     myArray.push(i);
+//     i++;
+// }
+// console.log(myArray);
+
+//for loops
+// ourArray= [];
+
+// for(var i = 1; i < 10; i++ ){
+//     ourArray.push(i);
+// }
+// console.log(ourArray);
+
+//odd numbers incrementation
+// ourArray= [];
+
+// for(var i = 1; i < 10; i+=2){
+//     ourArray.push(i);
+// }
+// console.log(ourArray);
+
+//even numbers incrementation
+// ourArray= [];
+
+// for(var i = 0; i < 10; i+=2){
+//     ourArray.push(i);
+// }
+// console.log(ourArray);
+
+
+//count backwards with for loops
+
+// var ourArray= [];
+// for (var i = 10; i > 0; i-=2){
+//     ourArray.push(i);
+// }
+// console.log(ourArray);
+
+
+//iterate thru an array with for loop
+
+// var myArr = [2, 3, 4, 5, 6, 7, 8];
+// var myTotal=0;
+
+// for(var i = 0; i < myArr.length; i++){
+//     myTotal+=myArr[i];
+// }
+// console.log(myTotal);
+
+
+//nesting for loops
+
+// function multiplyAll(arr){
+//     var product = 1;
+//     for(var i = 0; i < arr.length; i++){
+//         for(var j=0; j < arr[i].length; j++){
+//             product*=arr[i][j]
+//         }
+//     }
+//     return product;
+// }
+
+
+// var product = multiplyAll ([[1, 2],[3, 4],[5, 6, 7]]);
+
+// console.log(product);
+
+
+//iterate with do..while loops
+//  var myArr=[];
+//  var i=10;
+
+//  do{
+//     myArr.push(i);
+//     i++;
+//  }
+//  while(i<5);
+//  console.log(i, myArr);
+
+
+ //coding challenge profile lookup
+
+//  var contacts=[
+//     {
+//         "firstName" : "Akira",
+//         "lastName" : "Laine",
+//         "number" : "7429427287",
+//         "likes" : ["Pizza", "Coding", "Brownie Points"]
+//     },
+//     {
+//         "firstName" : "Harry",
+//         "lastName" : "Potter",
+//         "number" : "2894247482",
+//         "likes" : ["Hogwarts", "Magic", "Hagrid"]
+//     },
+//     {
+//         "firstName" : "Sherlock",
+//         "lastName" : "Homes",
+//         "number" : "2839i209428",
+//         "likes" : ["Intriguing Cases", "Violin"]
+//     },
+//     {
+//         "firstName" : "Kristian",
+//         "lastName" : "Vos",
+//         "number" : "Unknown",
+//         "likes" : ["JavaScript", "Gaming", "Foxes"]
+//     }
+//  ];
+
+//  function lookUpProfile(name, prop){
+//     for(var i=0; i<contacts.length; i++){
+//         if(contacts[i].firstName===name){
+//             return contacts[i][prop] || "No Such Property";
+            
+//         }
+//     }
+//     return "No Such Contact";
+//  }
+//  var data=lookUpProfile("Kristian", "likes");
+//  console.log(data);
+
+
+ //generate random fractions
+
+//  function randomFunction(){
+//     return Math.random();
+//  }
+//  console.log(randomFunction());
+
+ //whole numbers
+//  var randomNumberBetween0and19 = Math.floor(Math.random()*20);
+//  function randomWholeNumber(){
+//     return Math.floor(Math.random()*10);
+//  }
+//  console.log(randomWholeNumber);
+
+
+//random number between a range
+
+// function randomRange(myMin, myMax){
+//     return Math.floor(Math.random()*(myMax-myMin+1))+myMin;
+// }
+// var myRandom=randomRange(1, 20);
+// console.log(myRandom);
+
+
+//parseINT function
+// function convertToInteger(str){
+//     return parseInt(str);
+// }
+// console.log("40");
+
+// function convertToInteger(str){
+//     return parseInt(str, 2);
+// }
+// console.log(10011);
+
+
+//multiple ternary operator
+// function checkSign(num){
+//     return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+// }
+// console.log(checkSign(-10));
+
+
+// //mutate an array declared with const
+
+// const s=[5, 7, 2];
+// function editInPlace(){
+//     "use strict";
+
+//     s[0]=3;
+//     s[1]=8;
+//     s[2]=6;
+// }
+// editInPlace();
+// console.log(s);
+
+
+//prevent object mutation
+
+// function freezeObj(){
+//     "use strict";
+//     const MATH_CONSTANTS = {
+//         PI : 3.145
+//     };
+
+//     Object.freeze(MATH_CONSTANTS);
+
+//     try {
+//         MATH_CONSTANTS.PI = 4;
+//     }catch(ex){
+//         console.log(ex);
+//     }
+//     return MATH_CONSTANTS.PI;
+// }
+// const PI=freezeObj();
+
+
+//arrow function    
+// var magic = function(){
+//     return new date();
+// };
+// //same as this
+// const magic = () => new date(); 
+
+
+//arrow function with parameters
+//  var myConcat = function(arr1, arr2){
+//     return arr1.concat(arr2);
+//  };
+//  console.log(myConcat([1, 2], [3, 4, 5]));
+ //same as
+//  const myConcat = (arr1, arr2) => arr1.concat(arr2);
+//  console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+ //default parameters
+//  const increment = (function(){
+//     return function increment(number, value=1){
+//         return number+value;
+//     };
+//  })();
+//  console.log(increment(5, 8));
+//  console.log(increment(6));
+
+
+ //rest operators
+//  const sum = (function(){
+//     return function sum (...args){
+//         return args.reduce((a, b) => a+b,);
+//     };
+//  })();
+//  console.log(sum(1, 5, 7, 4));
+
+
+ //spread operator
+//  const arr1 = ["Jan", "Feb", "Mar", "Apr", "May"];
+//  let arr2;
+//  (function(){
+//     arr2=[...arr1];
+//     arr1[0]= "Fries"
+//  })();
+// console.log(arr2);
+//using slice method
+// const arr1 = ["Jan", "Feb", "Mar", "Apr", "May"];
+// const arr2 = arr1.slice();
+// arr2[0] = "fries";
+// console.log(arr1);
+// console.log(arr2);
+
+
+//simple fields
+// const createPerson = (name, age, gender) =>{
+//     return{
+//         name: "name",
+//         age: "age",
+//         gender : "gender"
+//     };
+// };
+// console.log(createPerson("Erick Nuthu", 20, "male"));
+// easier way
+// const createPerson= (name, age, gender) => ({name, age, gender});
+// console.log(createPerson("Eric Nuthu", 19, "Male"));
+
+
+ //declarative functions
+// const bicycle = {
+//     gear:2,
+//     setGear(newGear){
+//         "use strict";
+//         this.gear = newGear;
+//     }
+// };
+// bicycle.setGear(3);
+// console.log(bicycle.gear);
+
+
+//class syntax
+// class spaceShuttle {
+//     constructor(targetPlanet){
+//         this.targetPlanet=targetPlanet;
+//     }
+// }
+//     var zues = new spaceShuttle("jupiter");
+//     console.log(zues.targetPlanet)
+
+//     function makeClass(){
+//         class  vegetable{
+//             constructor(name){
+//                 this.name=name;
+//             }
+//         }
+//         return vegetable;
+//     }
+//     const vegetable=makeClass();
+//     const spinach = new vegetable("spinach");
+//     console.log(spinach.name);
 
 
 
