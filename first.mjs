@@ -947,3 +947,19 @@ console.log(secondToLastLetterOfLastName);*/
 
 
 
+//getting the sum of numbers divisible by 3,5,7 within a range.
+
+function sumOfMultiples(n){
+    let sum = 0;
+    for(i=1; i<=n; i++){
+        if(i%3===0 || i%5===0 || i%7===0){
+            sum += i;
+        }
+    }
+    return sum;
+};
+
+const n = 10;
+const result=sumOfMultiples(n);
+ console.log("Sum of all numbers divisible by 3, 5, or 7 up to", n , "is:", result);
+ //output is 40
