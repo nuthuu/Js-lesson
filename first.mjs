@@ -963,3 +963,151 @@ console.log(secondToLastLetterOfLastName);*/
 // const result=sumOfMultiples(n);
 //  console.log("Sum of all numbers divisible by 3, 5, or 7 up to", n , "is:", result);
  //output is 40
+
+
+//  const arr1=[1, 2, 3, 4, 5, 6, 7];
+//  const arr2=[...arr1];
+//  arr2[1]="erick";
+// //  console.log(arr2);
+// //  console.log(arr1);
+//  console.log(arr1===arr2);
+
+//  const arr1 = ["Erick", "Jackson", "Merryl", "Cherryl"];
+//  const arr2 = arr1.slice();
+//  console.log(arr2);
+
+
+
+//filtering through an number array without using the built in array.filter method
+
+// function filter(arr, fn) {
+//     const filteredArr=[];
+//     for(i=0; i<arr.length; i++){
+//         if(fn(arr[i], i)){
+//             filteredArr.push(arr[i]);
+//         }
+//     }
+//     return filteredArr;
+// };
+
+// const arr=[0, 10, 20, 30];
+// const isEven = num => num % 2 === 0;
+// const filteredArr=filter(arr, isEven);
+// console.log(filteredArr);
+
+
+//recursive implementation of the fibonacci sequence
+// function fibonacci(n){
+//     if(n<=1){
+//         return n;
+//     }else{
+//         return fibonacci(n - 1) + fibonacci(n - 2);
+//     }
+// }
+// console.log(fibonacci(10));
+
+
+
+//generate fibonacci sequence
+
+// function* fibGenerator(){
+//     let prev = 0;
+//     let curr = 1;
+//     yield prev;
+//     yield curr;
+
+//     while (true) {
+//         const next = prev + curr;
+//         yield next;
+//         prev=curr;
+//         curr=next;
+//     }
+// }
+
+// const fibonacciSequence=fibGenerator();
+// for(let i=0; i<10; i++){
+//     console.log(fibonacciSequence.next().value);
+// }
+
+
+
+//Determine the winner of the bowling game(challenge)
+
+// function calculateTurnValue(turn, prevTurn1, prevTurn2){
+//     if(prevTurn1===10 || (prevTurn1+prevTurn2 ===10)){
+//         return 2 * turn;
+//     }else{
+//         return turn
+//     }
+// }
+// var isWinner = function(player1, player2) {
+//     let scorePlayer1 = 0;
+//     let scorePlayer2 = 0;
+//     for (let i = 0; i < player1.length; i++) {
+//         const valuePlayer1 = calculateTurnValue(player1[i], player1[i - 1], player1[i - 2]);
+//         const valuePlayer2 = calculateTurnValue(player2[i], player2[i - 1], player2[i - 2]);
+
+//         scorePlayer1 += valuePlayer1;
+//         scorePlayer2 += valuePlayer2;
+//     }
+
+//     if (scorePlayer1 > scorePlayer2) {
+//         return 1;
+//     } else if (scorePlayer2 > scorePlayer1) {
+//         return 2;
+//     } else {
+//         return 0;
+//     }
+
+// };
+
+// const player1 = [2, 8, 4, 10, 6];
+// const player2 = [10, 7, 8, 7, 9];
+// console.log(isWinner(player1, player2));
+
+
+//try
+// function calculateTurnValue(turn, prevTurn1, prevTurn2) {
+//     if (prevTurn1 === 10 || (prevTurn1 + prevTurn2) === 10) {
+//         return 2 * turn;
+//     } else {
+//         return turn;
+//     }
+// }
+
+// var isWinner = function(player1, player2) {
+//     let scorePlayer1 = 0;
+//     let scorePlayer2 = 0;
+//     for (let i = 0; i < player1.length; i++) {
+//         const valuePlayer1 = calculateTurnValue(player1[i], player1[i - 1], player1[i - 2]);
+//         const valuePlayer2 = calculateTurnValue(player2[i], player2[i - 1], player2[i - 2]);
+
+//         scorePlayer1 += valuePlayer1;
+//         scorePlayer2 += valuePlayer2;
+//     }
+
+//     if (scorePlayer1 > scorePlayer2) {
+//         return "Player1 is the winner";
+//     } else if (scorePlayer2 > scorePlayer1) {
+//         return "Player2 is the winner";
+//     } else {
+//         return "Its a tie";
+//     }
+// };
+
+// const player1 = [2, 8, 2, 10, 6];
+// const player2 = [10, 7, 10, 9, 9];
+// console.log(isWinner(player1, player2)); // Output: 2
+
+
+
+//create a function that returns a new function 
+// function createHelloWorld() {
+//     return function () {
+//         return "Hello World";
+//     }
+// }
+// const helloFunc=createHelloWorld();
+// console.log(helloFunc);
+
+
