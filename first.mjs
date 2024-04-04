@@ -1111,3 +1111,211 @@ console.log(secondToLastLetterOfLastName);*/
 // console.log(helloFunc);
 
 
+//Largest 3-Same-Digit Number in String
+/*
+You are given a string num representing a large integer. An integer is good if it meets the following conditions:
+It is a substring of num with length 3.
+It consists of only one unique digit.
+Return the maximum good integer as a string or an empty string "" if no such integer exists.
+Note:
+A substring is a contiguous sequence of characters within a string.
+There may be leading zeroes in num or a good integer*/
+
+// function largestGoodInteger(num) {
+//     let largestGood="";
+//     for(let i=0; i < Math.min(num.length, 3); i++){
+//         const substring=num.substring(i, i + 3);
+
+//         if(substring.length ===3 && new Set(substring).size===1){
+//             if(!largestGood || parseInt(substring) > parseInt(largestGood)){
+//                 largestGood=substring;
+//             }
+//         }
+//     }
+//     return largestGood;  
+// }
+// const num="42352338"
+// console.log(largestGoodInteger(num));
+
+
+
+// Element Appearing More Than 25% In Sorted Array
+// function findSpecialInteger(arr){
+//     const quarter = Math.floor(arr.length / 4);
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === arr[i + quarter]){
+//             return arr[i];
+//         }
+//     }
+//     return null;
+// }
+// const arr = [1,2,2,6,6,6,6,7,10];
+// console.log(findSpecialInteger(arr));
+
+
+// function buyChoco(prices, money) {
+//     prices.sort((a, b) => a - b);
+
+//     let left=0;
+//     let right=prices.length - 1;
+//     let remainingMoney=money;
+
+//     while (left<right) {
+//         const totalCost=prices[left]+prices[right];
+//         if (totalCost<=remainingMoney) {
+//             remainingMoney-=totalCost;  
+//             left++;
+//         }else{
+//             right--;
+//         }
+//     }
+
+//     for (let i = 0; i < prices.length; i++) {
+//         for (let j = i=1; j < prices.length; j++) {
+//             const totalCost = prices[i]+prices[j];
+//             if (totalCost<=remainingMoney) {
+//                 remainingMoney-=totalCost;
+//             }
+//         }
+//     }
+// return remainingMoney;
+// }
+
+// const prices = [98,54,6,34,66,63,52,39];
+// const money = 62;
+// console.log(buyChoco(prices, money));
+
+
+
+//Widest Vertical Area Between Two Points Containing No Points
+
+// function maxWidthOfVerticalArea(points) {
+//     points.sort((a,b)=>a[0]-b[0]);
+//     let maxWidth=0;
+
+//     for (let i = 1; i < points.length; i++) {
+//         if (points[i-1]!==undefined) {
+//             const width = points[i][0]-points[i-1][0];
+//         maxWidth=Math.max(maxWidth, width);
+//         }
+//     }
+//     return maxWidth;
+// }
+// const points=[[8,7],[9,9],[7,4],[9,7]];
+// console.log(maxWidthOfVerticalArea(points));
+
+
+
+// Minimum Changes To Make Alternating Binary String
+// function minOperations(s) {
+//     let operations=0;
+
+//     for (let i = 0; i < s.length - 1; i++) {
+//         if (s[i] === s[i - 1]) {
+//             operations++;
+//         } 
+//     }
+//     return Math.ceil(operations/2);
+// }
+// const s = "110010";
+// console.log(minOperations(s))
+
+
+
+//Calculate Money in Leetcode Bank.
+/* 
+Hercy wants to save money for his first car. He puts money in the Leetcode bank every day.
+He starts by putting in $1 on Monday, the first day. Every day from Tuesday to Sunday, he will put in $1 more than the day before. On every subsequent Monday,
+he will put in $1 more than the previous Monday.
+Given n, return the total amount of money he will have in the Leetcode bank at the end of the nth day.
+*/
+/*
+1. create output variable.
+2. create deposit variable.
+3. create newMon variable.
+4. loop thru n.
+    a. add the deposit.
+    b. increment the deposit.
+    c. condition if "i" mod 7 is equal to 0.
+        1.increment the newMon.
+        2.set the deposit to newMon.
+return the output.
+*/
+// function totalMoney(n) {
+// let output= 0;
+// let deposit=1;
+// let newMon=1;
+
+//     for (let i = 1; i <= n; i++) {
+//         output+=deposit;
+//         deposit++;
+//         if (i % 7 == 0) {
+//             newMon++;
+//             deposit=newMon;
+//         }
+//     }
+//     return output;
+// }
+// console.log(totalMoney(100));
+
+
+//Destination City.
+/*
+You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. Return the destination city,
+that is, the city without any path outgoing to another city.
+It is guaranteed that the graph of paths forms a line without any loop, therefore, there will be exactly one destination city.
+*/
+
+/*
+1. create a new set for the destination
+2. loop thru the path
+    a.for each first index of the subarray add that to the departure set.
+3. loop thru the path again.
+    a. condition to check if each subarray has a second index value.
+    b. if it doesn`t, return the second index value of the subarray.
+*/
+
+// function destCity (paths) {
+//     let departure = new Set();
+//         for (let path of paths) {
+//             departure.add(path[0]);
+//         }
+//         for (let path of paths) {
+//             if (!departure.has(path[1])) {
+//                 return path[1];
+//             }
+//         }
+// }
+// let paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]];
+// console.log(destCity(paths));
+
+
+
+
+// unique numbers of Occurrences.
+/*
+1. create map object.
+2. loop thru arr. 
+    a.create condition if the current index is NOT inside the arr.
+        i. add the current index value and set the value equal to 1.
+    b.Else
+        i. increment the value for that key.
+3. create count variable and set equal values of the mao(as in arr)    
+4.return true if the length of count is equal to the size of the new set of count.
+*/
+
+// function uniqueOccurrences(arr) {
+//     let map = {};
+
+//     for (let i = 0; i< arr.length; i++) {
+//         if (!map[arr[i]]) {
+//             map[arr[i]] = 1;
+//         } else{
+//             map[arr[i]]++;
+//         }  
+//     }
+//     let count = Object.values(map);
+//     return count.length === new Set(count).size;  
+// }
+// const arr = [1,2];
+// console.log(uniqueOccurrences(arr));
